@@ -1,25 +1,19 @@
-const App = () => {
-    const bootcamps = [
-        {
-            id: 1,
-            name: 'PHP Bootcamps',
-            average_rating: 8
-        },
-        {
-            id: 1,
-            name: 'JavaScript Bootcamps',
-            average_rating: 10
-        }
-    ]
+//Dependencias necesarias 
+import { useState } from 'react'
+//data
+import Resenias from './data/Resenias'
+import ReseniaList from './componentes/ReseniaList'
+
+import Resenia from "./componentes/Resenia"
+
+function App() {
+
+    //Crear estado para arreglo de resenias
+    const [listaresenias, setListaresenias] = useState (Resenias)
     return (
-        <>
-            <h1>Listado de Bootcamps</h1>
-            <ul>
-                {bootcamps.map((bootcamp, index) => (
-                    <li key={index}> {bootcamp.name} </li>
-                ))}
-            </ul>
-        </>
+        <div className="container">
+            <ReseniaList listaresenias={listaresenias} />
+        </div>
     )
 }
 
