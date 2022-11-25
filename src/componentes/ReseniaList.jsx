@@ -1,6 +1,6 @@
 import Resenia from "./Resenia";
 
-const ReseniasList = ({ listaresenias }) => {
+const ReseniasList = ({ listaresenias, deleteResenia }) => {
 
 
     if (!listaresenias || listaresenias.lenght === 0) {
@@ -12,11 +12,12 @@ const ReseniasList = ({ listaresenias }) => {
             //condicional en caso de que no llegue 
 
             <div className="feedback-list">
-                {/*Recorrer la listasresenias */}
+                {/*Recorrer la listas resenias */}
                 {listaresenias.map((resenia) =>
                 (
                     <div className="card">
                        <Resenia 
+                       deleteResenia={deleteResenia}
                        key={resenia.id}
                        resenia={resenia}/>
                     </div>

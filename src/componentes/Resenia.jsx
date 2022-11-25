@@ -1,24 +1,25 @@
 import React from 'react'
 import { useState } from 'react'
+// import {FaTimes}  from "react-icons/fa"
 
-const Resenia = ({resenia}) => {
+const Resenia = ({ resenia, deleteResenia  }) => {
 
     //Definir estados
     const [rating, setRating] = useState(resenia.rating)
     const [coment, setComent] = useState(resenia.text)
 
     //Cambiar el estado del rating
-    const addNota = () =>{
-        setRating((prev) =>{
+    const addNota = () => {
+        setRating((prev) => {
             return prev + 1
         })
     }
-    const resNota = () =>{
-        setRating((prev) =>{
+    const resNota = () => {
+        setRating((prev) => {
             return prev - 1
         })
     }
-    
+
     return (
         <div className='card'>
             <div className='num-display'>
@@ -27,12 +28,12 @@ const Resenia = ({resenia}) => {
             <div className='text-display'>
                 {coment}
             </div>
-            <button onClick={ addNota}>
+            <button onClick={addNota}>
                 Aumentar Nota
             </button>
-                <br/>
-            <button onClick={ resNota}>
-                Disminuir Nota
+            <br />
+            <button onClick={() =>deleteResenia(resenia.id)} className='close'>
+                Eliminar
             </button>
         </div>
 
