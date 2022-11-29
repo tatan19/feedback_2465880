@@ -1,5 +1,3 @@
-
-
 const Resenias = [
     {
       id: "1",
